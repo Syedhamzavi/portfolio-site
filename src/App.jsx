@@ -114,7 +114,7 @@ export default function App() {
         <div className="h-full w-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:42px_42px]" />
       </div>
 
-      <nav className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur-xl">
+      <nav className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-slate-950/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <a href="#home" className="text-lg font-bold tracking-wide">
             Hamzavi<span className="text-cyan-400">.Portfolio</span>
@@ -145,7 +145,7 @@ export default function App() {
 
       <header
         id="home"
-        className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950"
+        className="relative scroll-mt-32 overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 pt-28 sm:scroll-mt-24 sm:pt-24"
       >
         <div className="absolute left-[-120px] top-[-120px] h-72 w-72 rounded-full bg-cyan-500/20 blur-3xl sm:h-80 sm:w-80"></div>
         <div className="absolute bottom-[-120px] right-[-120px] h-72 w-72 rounded-full bg-blue-500/20 blur-3xl sm:h-80 sm:w-80"></div>
@@ -267,7 +267,7 @@ export default function App() {
 
       <section
         id="skills"
-        className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20"
+        className="scroll-mt-32 mx-auto max-w-7xl px-4 py-14 sm:scroll-mt-24 sm:px-6 sm:py-20"
       >
         <SectionHeading
           small="Capabilities"
@@ -284,7 +284,7 @@ export default function App() {
 
       <section
         id="projects"
-        className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20"
+        className="scroll-mt-32 mx-auto max-w-7xl px-4 py-14 sm:scroll-mt-24 sm:px-6 sm:py-20"
       >
         <SectionHeading
           small="Selected Work"
@@ -301,7 +301,7 @@ export default function App() {
 
       <section
         id="workflow"
-        className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20"
+        className="scroll-mt-32 mx-auto max-w-7xl px-4 py-14 sm:scroll-mt-24 sm:px-6 sm:py-20"
       >
         <SectionHeading
           small="Analytics Process"
@@ -333,7 +333,7 @@ export default function App() {
 
       <section
         id="experience"
-        className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20"
+        className="scroll-mt-32 mx-auto max-w-7xl px-4 py-14 sm:scroll-mt-24 sm:px-6 sm:py-20"
       >
         <SectionHeading
           small="Background"
@@ -386,7 +386,7 @@ export default function App() {
 
       <section
         id="recognition"
-        className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20"
+        className="scroll-mt-32 mx-auto max-w-7xl px-4 py-14 sm:scroll-mt-24 sm:px-6 sm:py-20"
       >
         <SectionHeading
           small="Recognition"
@@ -449,7 +449,7 @@ export default function App() {
 
       <section
         id="contact"
-        className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20"
+        className="scroll-mt-32 mx-auto max-w-7xl px-4 py-14 sm:scroll-mt-24 sm:px-6 sm:py-20"
       >
         <div className="rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-cyan-500/20 to-blue-500/10 p-6 text-center shadow-2xl sm:p-10">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300 sm:text-sm">
