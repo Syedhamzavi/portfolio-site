@@ -21,18 +21,22 @@ const profile = {
 const skills = [
   {
     title: "Data Analysis",
+    icon: "📊",
     items: ["Python", "Pandas", "NumPy", "Excel", "EDA", "Data Cleaning"],
   },
   {
     title: "BI & Dashboards",
+    icon: "📈",
     items: ["Power BI", "Tableau", "DAX", "Power Query", "KPI Reporting"],
   },
   {
     title: "Machine Learning",
+    icon: "🤖",
     items: ["Scikit-learn", "Model Training", "Prediction Models", "Streamlit"],
   },
   {
     title: "Analytics Workflow",
+    icon: "🧩",
     items: ["ETL", "Data Modeling", "Reporting", "Visualization", "SQL"],
   },
 ];
@@ -41,6 +45,8 @@ const projects = [
   {
     title: "Sales & Performance Analysis Dashboard",
     tool: "Tableau",
+    metric: "$2.33M",
+    metricLabel: "Sales Analyzed",
     description:
       "Built an interactive Tableau dashboard analyzing retail sales across 3 categories and 4 regions. Included a dynamic metric selector, monthly profit trend, state-level geographic mapping, and segment-wise profitability breakdown. Surfaced KPIs including $2.33M in sales, 12.56% profit margin, and 7.90% return rate.",
     tags: ["Tableau", "Sales Analysis", "KPIs", "Dashboard"],
@@ -51,6 +57,8 @@ const projects = [
   {
     title: "Financial Performance Dashboard",
     tool: "Power BI",
+    metric: "$118.73M",
+    metricLabel: "Sales Analyzed",
     description:
       "Built a 2-page Power BI financial dashboard analyzing $118.73M in sales and $16.89M in profit across 5 countries and 6 product lines from 2013 to 2014. Implemented DAX measures, discount band analysis, monthly trend charts, cross-page navigation, and dynamic slicers for country, year, and segment-level filtering.",
     tags: ["Power BI", "DAX", "Financial Analysis", "Power Query"],
@@ -61,6 +69,8 @@ const projects = [
   {
     title: "Finvisor – AI Personal Finance Advisor",
     tool: "Python, Streamlit, Machine Learning",
+    metric: "Finance",
+    metricLabel: "Forecasting App",
     description:
       "Developed a Streamlit app for expense tracking, budgeting, category-wise spending analysis, and future expense forecasting using machine learning.",
     tags: ["Python", "Streamlit", "ML", "Finance Analytics"],
@@ -70,6 +80,8 @@ const projects = [
   {
     title: "Multiple Disease Prediction Using ML Model",
     tool: "Python, Streamlit, Machine Learning",
+    metric: "3 Models",
+    metricLabel: "Healthcare Prediction",
     description:
       "Built a machine learning-based Streamlit application to predict multiple diseases using trained ML models. The project demonstrates preprocessing, model integration, prediction logic, and healthcare analytics.",
     tags: ["Python", "Streamlit", "Scikit-learn", "Healthcare ML"],
@@ -87,9 +99,21 @@ const certifications = [
   "Advanced SQL – Great Learning",
 ];
 
+const workflow = [
+  "Collect Data",
+  "Clean & Transform",
+  "Analyze",
+  "Visualize",
+  "Generate Insights",
+];
+
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
+    <div className="min-h-screen overflow-hidden bg-slate-950 text-slate-100">
+      <div className="pointer-events-none fixed inset-0 opacity-[0.04]">
+        <div className="h-full w-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:42px_42px]" />
+      </div>
+
       <nav className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <a href="#home" className="text-lg font-bold tracking-wide">
@@ -102,6 +126,9 @@ export default function App() {
             </a>
             <a href="#projects" className="hover:text-cyan-400">
               Projects
+            </a>
+            <a href="#workflow" className="hover:text-cyan-400">
+              Workflow
             </a>
             <a href="#experience" className="hover:text-cyan-400">
               Experience
@@ -138,14 +165,18 @@ export default function App() {
             </p>
 
             <p className="mt-6 max-w-2xl text-justify text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
-              AI and Data Science graduate with hands-on experience in data
-              analytics, dashboard development, machine learning, and business
-              reporting. Skilled in Python, SQL, Power BI, Tableau, Excel, and
-              Streamlit, with projects across sales analytics, financial
-              analysis, healthcare prediction, and personal finance forecasting.
-              Passionate about transforming raw data into meaningful insights,
-              interactive dashboards, and data-driven solutions that support
-              better decision-making.
+              AI and Data Science graduate with hands-on experience in{" "}
+              <strong className="text-cyan-300">data analytics</strong>,
+              dashboard development, machine learning, and business reporting.
+              Skilled in{" "}
+              <strong className="text-cyan-300">
+                Python, SQL, Power BI, Tableau, Excel, and Streamlit
+              </strong>
+              , with projects across sales analytics, financial analysis,
+              healthcare prediction, and personal finance forecasting. Passionate
+              about transforming raw data into meaningful insights, interactive
+              dashboards, and data-driven solutions that support better
+              decision-making.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
@@ -175,16 +206,25 @@ export default function App() {
               >
                 LinkedIn
               </a>
-
-              
             </div>
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-white/10 p-4 shadow-2xl backdrop-blur-xl sm:p-6">
             <div className="rounded-2xl bg-slate-950/80 p-5 sm:p-6">
-              <p className="text-xs uppercase tracking-[0.25em] text-slate-400 sm:text-sm">
-                Portfolio Snapshot
-              </p>
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.25em] text-slate-400 sm:text-sm">
+                    Portfolio Snapshot
+                  </p>
+                  <h2 className="mt-2 text-xl font-bold text-white">
+                    Analytics Overview
+                  </h2>
+                </div>
+
+                <div className="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 px-4 py-3 text-cyan-300">
+                  KPI
+                </div>
+              </div>
 
               <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-1">
                 <Stat number="6+" label="Projects Completed" />
@@ -194,6 +234,25 @@ export default function App() {
                   label="Records Analyzed Across Dashboards"
                 />
                 <Stat number="8.0/10" label="Engineering CGPA" />
+              </div>
+
+              <div className="mt-8 rounded-2xl border border-cyan-400/20 bg-slate-900/70 p-5">
+                <p className="text-sm font-semibold text-white">
+                  Analytics Stack
+                </p>
+
+                <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                  {["Power BI", "Tableau", "Python", "SQL", "Excel", "ML"].map(
+                    (item) => (
+                      <div
+                        key={item}
+                        className="rounded-xl border border-white/10 bg-slate-950/80 px-3 py-3 text-center text-xs font-semibold text-slate-300"
+                      >
+                        {item}
+                      </div>
+                    )
+                  )}
+                </div>
               </div>
             </div>
 
@@ -218,29 +277,7 @@ export default function App() {
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {skills.map((skill) => (
-            <div
-              key={skill.title}
-              className="rounded-3xl border border-white/10 bg-white/[0.04] p-5 shadow-xl transition hover:-translate-y-1 hover:border-cyan-400/50 hover:bg-white/[0.07] sm:p-6"
-            >
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-400/10 text-xl text-cyan-300">
-                ✦
-              </div>
-
-              <h3 className="text-lg font-bold text-white sm:text-xl">
-                {skill.title}
-              </h3>
-
-              <div className="mt-5 flex flex-wrap gap-2">
-                {skill.items.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-white/10 bg-slate-900 px-3 py-1 text-xs text-slate-300"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <SkillCard key={skill.title} {...skill} />
           ))}
         </div>
       </section>
@@ -259,6 +296,38 @@ export default function App() {
           {projects.map((project) => (
             <ProjectCard key={project.title} {...project} />
           ))}
+        </div>
+      </section>
+
+      <section
+        id="workflow"
+        className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20"
+      >
+        <SectionHeading
+          small="Analytics Process"
+          title="How I Approach Data Problems"
+          description="A practical workflow for converting raw data into dashboards, models, and business insights."
+        />
+
+        <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-5 shadow-xl sm:p-8">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-5">
+            {workflow.map((step, index) => (
+              <div key={step} className="relative">
+                <div className="rounded-2xl border border-cyan-400/20 bg-slate-900/80 p-5 text-center">
+                  <p className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-cyan-400 text-sm font-bold text-slate-950">
+                    {index + 1}
+                  </p>
+                  <h3 className="mt-4 text-sm font-bold text-white sm:text-base">
+                    {step}
+                  </h3>
+                </div>
+
+                {index < workflow.length - 1 && (
+                  <div className="absolute right-[-18px] top-1/2 hidden h-[2px] w-9 bg-cyan-400/40 md:block"></div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -382,19 +451,19 @@ export default function App() {
         id="contact"
         className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20"
       >
-        <div className="rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-cyan-500/20 to-blue-500/10 p-6 shadow-2xl sm:p-10">
-          <p className="text-xs uppercase align-center text-center tracking-[0.25em] text-cyan-300 sm:text-sm">
-          <strong>  Contact </strong>
+        <div className="rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-cyan-500/20 to-blue-500/10 p-6 text-center shadow-2xl sm:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300 sm:text-sm">
+            Contact
           </p>
 
-          <h2 className="mt-4 text-2xl font-bold text-center text-white sm:text-3xl md:text-4xl">
+          <h2 className="mt-4 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
             Open to Data Analyst Opportunities
           </h2>
 
-          <p className="mt-4 max-w-6xl text-justify text-sm leading-7 text-slate-300 sm:text-base">
-          Available for entry-level data analyst roles involving SQL, Python,
-          Power BI, Tableau, Excel, dashboards, reporting, machine learning,
-          and business insights.
+          <p className="mx-auto mt-4 max-w-3xl text-justify text-sm leading-7 text-slate-300 sm:text-base">
+            Available for entry-level data analyst roles involving SQL, Python,
+            Power BI, Tableau, Excel, dashboards, reporting, machine learning,
+            and business insights.
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
@@ -404,8 +473,6 @@ export default function App() {
             >
               Email Me
             </a>
-
-            
           </div>
         </div>
       </section>
@@ -419,11 +486,34 @@ export default function App() {
 
 function Stat({ number, label }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 sm:p-5">
+    <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition hover:border-cyan-400/40 hover:bg-cyan-400/5 sm:p-5">
       <p className="text-2xl font-extrabold text-cyan-300 sm:text-3xl">
         {number}
       </p>
       <p className="mt-1 text-xs text-slate-400 sm:text-sm">{label}</p>
+    </div>
+  );
+}
+
+function SkillCard({ title, icon, items }) {
+  return (
+    <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-5 shadow-xl transition hover:-translate-y-1 hover:border-cyan-400/50 hover:bg-white/[0.07] sm:p-6">
+      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-400/10 text-xl text-cyan-300">
+        {icon}
+      </div>
+
+      <h3 className="text-lg font-bold text-white sm:text-xl">{title}</h3>
+
+      <div className="mt-5 flex flex-wrap gap-2">
+        {items.map((item) => (
+          <span
+            key={item}
+            className="rounded-full border border-white/10 bg-slate-900 px-3 py-1 text-xs text-slate-300"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
     </div>
   );
 }
@@ -449,24 +539,37 @@ function SectionHeading({ small, title, description }) {
 function ProjectCard({
   title,
   tool,
+  metric,
+  metricLabel,
   description,
   tags,
   projectLink,
   githubLink,
 }) {
   return (
-    <div className="group rounded-3xl border border-white/10 bg-white/[0.04] p-5 shadow-xl transition hover:-translate-y-1 hover:border-cyan-400/50 hover:bg-white/[0.07] sm:p-7">
-      <p className="text-sm font-semibold text-cyan-300">{tool}</p>
+    <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-5 shadow-xl transition hover:-translate-y-1 hover:border-cyan-400/50 hover:bg-white/[0.07] sm:p-7">
+      <div className="absolute right-0 top-0 h-24 w-24 rounded-bl-full bg-cyan-400/10"></div>
 
-      <h3 className="mt-3 text-xl font-bold text-white sm:text-2xl">
-        {title}
-      </h3>
+      <div className="relative flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-sm font-semibold text-cyan-300">{tool}</p>
 
-      <p className="mt-4 text-sm leading-7 text-slate-400 sm:text-base">
+          <h3 className="mt-3 text-xl font-bold text-white sm:text-2xl">
+            {title}
+          </h3>
+        </div>
+
+        <div className="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 px-4 py-3">
+          <p className="text-xl font-extrabold text-cyan-300">{metric}</p>
+          <p className="text-xs text-slate-400">{metricLabel}</p>
+        </div>
+      </div>
+
+      <p className="relative mt-6 text-justify text-sm leading-7 text-slate-400 sm:text-base">
         {description}
       </p>
 
-      <div className="mt-6 flex flex-wrap gap-2">
+      <div className="relative mt-6 flex flex-wrap gap-2">
         {tags.map((tag) => (
           <span
             key={tag}
@@ -477,7 +580,7 @@ function ProjectCard({
         ))}
       </div>
 
-      <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+      <div className="relative mt-7 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
         <a
           href={projectLink}
           target="_blank"
