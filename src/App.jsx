@@ -150,7 +150,7 @@ export default function App() {
         <div className="absolute left-[-120px] top-[-120px] h-72 w-72 rounded-full bg-cyan-500/20 blur-3xl sm:h-80 sm:w-80"></div>
         <div className="absolute bottom-[-120px] right-[-120px] h-72 w-72 rounded-full bg-blue-500/20 blur-3xl sm:h-80 sm:w-80"></div>
 
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-center lg:py-24">
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-start lg:py-24">
           <div>
             <p className="mb-5 inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-xs font-medium text-cyan-300 sm:text-sm">
               Data Analyst • Python • SQL • Power BI • Tableau • ML
